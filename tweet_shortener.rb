@@ -19,7 +19,7 @@ def word_substituter(tweet_string)
   dictionary_hash = dictionary
   tweet_array = tweet_string.split(" ")
   tweet_array.each_with_index do |tweet_word, index|
-    if dictionary_hash.keys.include?(tweet_word)
+    if dictionary_hash.keys.upcase.include?(tweet_word.upcase)
       tweet_array[index] = dictionary[tweet_word]
     end
   end
