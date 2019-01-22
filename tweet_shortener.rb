@@ -18,13 +18,14 @@ end
 def word_substituter(all_tweet_array)
   dictionary_hash = dictionary
   all_tweet_array.each do |tweet_string|
-  tweet_array = tweet_string.split(" ")
-  tweet_array.each_with_index do |tweet_word, index|
-    if dictionary_hash.keys.include?(tweet_word)
-      tweet_array[index] = dictionary[tweet_word]
+    tweet_array = tweet_string.split(" ")
+    tweet_array.each_with_index do |tweet_word, index|
+      if dictionary_hash.keys.include?(tweet_word)
+        tweet_array[index] = dictionary[tweet_word]
+      end
     end
+    tweet_array.join(" ")
   end
-  tweet_array.join(" ")
 end
 
 
